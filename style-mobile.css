@@ -1,0 +1,223 @@
+html, body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #040a22;
+    font-family: 'Montserrat', sans-serif;
+    color: antiquewhite;
+    caret-color: transparent;
+    margin:0;
+}
+#manege {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Utilisez min-height pour garantir que le contenu prend au moins toute la hauteur de la fenêtre */
+    padding-bottom: 90px;
+}
+.centre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*! BOITE NOM/IMAGE*/
+.circleText {
+    position: absolute;
+    text-align: center;
+    border: 2px solid #30323c;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.6), 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    font-size: auto;
+    color: rgb(240, 248, 255);
+}
+.bigBox {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+    margin: 15px;
+    z-index: 1;
+}
+.box {
+    position: relative;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transition: .5s ease;
+}
+.boxFront, .boxBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#textNom{
+    font-size: 3vh;
+    padding: 1vh;
+    font-weight: 800;
+}
+.boxBack {
+    transform: rotateY(180deg);
+}
+.is-flipped {
+    transform: rotateY(180deg);
+}
+.is-visible {
+    opacity: 1;
+}
+.is-hidden {
+    opacity: 0;
+}
+img {
+    height: 100%;
+}
+
+/*!SKILLSOFT*/
+.rotating-container { 
+    width: 300px; 
+    height: auto;    
+}
+
+.panel {
+    position: relative;
+    left: 5vw;
+    width: 200px; 
+    height: 200px; 
+}
+.card{
+    width: 200px; 
+    height: 200px;        
+}
+.card img{
+    max-height: 200px;
+}
+.intro:hover img{    
+    max-height: 200px;    
+}
+.intro img{
+    max-height: 200px;    
+}
+.surIntro{
+    position: absolute;
+    top:0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+}
+.intro {
+    height: 200px;
+    opacity: 0; 
+    position: relative; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.intro p {
+    position: relative;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    font-family: sans-serif;
+    text-align: center;
+    width: 280px;        
+}
+.cardCV {
+    width: 200px; 
+    height: 200px; 
+    pointer-events: auto;
+    }
+
+.card, .intro {
+    transition: opacity 1s ease-in-out; 
+}
+.imgIntro {
+    position: relative;
+}
+
+/*PLACEMENT DES P AUTOUR DU SKILL*/
+
+.pAdaptabilite { position: relative;
+    top:-92%; 
+    left: 65%;}
+.pAutonomie {    
+    position: relative;
+    top:-92%; 
+    left: 65%;}
+.pCreativite {    
+    position: relative;
+    top:-92%; 
+    left: 65%;}
+.pEsprit {    
+    position: relative;
+    top:-105%; 
+    left: 65%;
+}
+.pPersuasion { 
+    position: relative;
+    top:-91%; 
+    left: 65%;}
+.pTeam { 
+    position: relative;
+    top:-92%; 
+    left: 65%;}
+
+    /*!CONTACT*/
+.contact {
+    height: 6vh;
+    width: 6vh;
+    border: 0.3vh rgb(19, 247, 3) solid;
+    color: white;
+    position: fixed;
+    margin: 25px;
+    top:0;
+    border-radius: 50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 1.2vh;
+    font-weight: 800;
+}
+/*ANIAMTION CONTCT ROND ET CARRE*/
+.contact, .centre {
+    transition: all 1s ease-in-out;
+}
+
+.contact p {
+    transition: transform 01s ease, opacity 01s ease;
+}
+
+.contact a {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/*! FOOTER*/
+footer {
+    position:relative;
+    background-color: #1f2327;
+    color: #f8f9fa;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+}
+footer a {
+    color: #f8f9fa;            
+    text-decoration:underline;   
+    display: inline-block; 
+    font-weight: 800;
+    font-size: 20px;
+}

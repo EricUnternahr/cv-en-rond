@@ -1,0 +1,111 @@
+body {
+    background-image: radial-gradient(circle, #046c69, #013836, #012726, #000909);
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    min-width: 100vw;
+}
+
+
+span{
+    display: inline-block;
+    font-weight: 800;
+    color: rgb(235, 235, 246);
+}
+
+.col-8 {
+    flex: 0 0 95%;
+    max-width: 95%;
+}
+
+.trait{
+    display:none;
+}
+
+h1 {
+    font-style: italic;
+    font-size: 10vw; 
+    color: cadetblue; 
+    font-weight: 900; 
+    text-align: center;
+    filter: drop-shadow(3px 3px 4px rgba(24, 24, 24, 0.7));
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+    text-align: center;
+    font-size: 6vw;
+    font-weight: 800;
+}
+h4 {
+    font-size: 4vw;   
+    text-align: center;
+    
+}
+h2, h3, h4, h5, h6 {
+    color: azure;
+}
+p {
+    margin-bottom: 0.3vw;
+}
+ul {
+    font-size: 3.4vw;
+}
+.colonneGauche {
+    display: none;
+}
+
+div.pro, .nom, .experiencesPro {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+.pro ul {
+display: none;
+animation: show 1s ease-in-out;
+
+}
+
+@keyframes show {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+.pro{
+    padding-left:1em;
+}
+
+
+/*!CONTACT*/
+.contact {
+    height: 7vh;
+    width: 7vh;
+    border: 0.3vh rgb(19, 247, 3) solid;
+    color: white;
+    position: fixed;
+    top: 1.5vh;
+    right:2.5vw;
+    border-radius: 50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 1.5vh;
+    font-weight: 800;
+    z-index: 1;
+}
+.contact, .centre {
+    transition: all 1s ease-in-out;
+}
+
+.contact p {
+    transition: transform 01s ease, opacity 01s ease;
+}
+
+.contact a {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}

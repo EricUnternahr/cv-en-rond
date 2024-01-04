@@ -1,0 +1,290 @@
+body {
+    background: radial-gradient(circle, #046c69, #013836, #012726, #000909);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    padding: 0 !important;
+}
+span{
+    display: inline-block;
+    font-weight: 800;
+    
+    transition: transform 0.3s ease;
+    color: rgb(235, 235, 246);
+}
+
+
+#email {
+    color: black;      
+    text-decoration: underline;
+}
+
+ul {
+    list-style-position: inside; 
+    padding-left: 0; 
+}
+
+li {
+    margin-bottom: 0.3em; /
+}
+h1 {
+    font-size: 5rem;
+    color: cadetblue;
+    font-weight: 800;
+    filter: drop-shadow(5px 5px 5px rgba(24, 24, 24, 0.6));
+}
+
+h2, h3, h4, h5, h6 {
+    color: azure;
+}
+
+p {
+    margin-bottom: 0.3em;
+}
+
+.colonneGauche {
+    background: linear-gradient(to bottom, rgb(223, 222, 220) 75%, #008080 25%);
+
+    color: rgb(30, 51, 51);
+    font-weight: 600;
+}
+.colonneDroite {
+    max-height: auto;
+}
+
+.img {
+    position: relative;
+    height: 20em;
+    background-color: #03989e;
+}
+
+.img::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 14em solid transparent;
+    border-right: 14em solid transparent;
+    border-top: 6em solid #03989e;
+}
+
+.profilPro::before, .profilPro::after {
+    content: "";
+    position: absolute;
+    top: -5.95em;
+    width: 0;
+    height: 0;
+    border-bottom: 6em solid cornflowerblue;
+}
+
+.profilPro::before {
+    left: 0;
+    border-right: 14em solid transparent;
+}
+
+.profilPro::after {
+    right: 0;
+    border-left: 14em solid transparent;
+}
+
+.profP {
+    position: relative;
+    margin-top: 7em;
+    background-color: cornflowerblue;
+    padding: 2em;
+}
+
+.diplomes::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 14em solid transparent;
+    border-right: 14em solid transparent;
+    border-top: 6em solid cornflowerblue;
+}
+
+.meContacter {
+    position: relative;
+    margin-top: 7em;
+    color: #000909;
+    background-color: #008080;
+    padding: 2em;
+    
+}
+
+.meContacter > p {
+    font-size: 20px;
+}
+
+.meContacter::before, .meContacter::after {
+    content: "";
+    position: absolute;
+    top: -5.95em;
+    width: 0;
+    height: 0;
+    border-bottom: 6em solid #008080;
+}
+
+.meContacter::before {
+    left: 0;
+    border-right: 14em solid transparent;
+}
+
+.meContacter::after {
+    right: 0;
+    border-left: 14em solid transparent;
+}
+
+img {
+    z-index: 1;
+    height: 20em;
+    width: auto;
+    position: relative;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+}
+
+.trait {
+    width: 100%;
+    height: 1em;
+    background: #03989e;
+}
+
+/*!CONTACT*/
+.contact {
+    height: 10vh;
+    width: 10vh;
+    border: 0.51vh rgb(19, 247, 3) solid;
+    color: white;
+    position: fixed;
+    top: 1vh;
+    right:1vw;
+    border-radius: 50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 2vh;
+    font-weight: 800;
+    z-index: 1;
+}
+.contact, .centre {
+    transition: all 1s ease-in-out;
+}
+
+.contact p {
+    transition: transform 01s ease, opacity 01s ease;
+}
+
+.contact a {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* #contactButton {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 1;
+}
+#contactButton img {
+    height: 100px;
+}
+
+#liens {
+    visibility: hidden; 
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s ease, visibility 1s ease, max-height 1s ease;
+    text-align: center;
+    overflow: hidden; 
+}
+
+#liens.visible {
+    visibility: visible; 
+    opacity: 1;
+    max-height: 500px; 
+}
+
+#liens a {
+    color: white;
+    font-size: 2em;
+    display: block;
+    padding: 5px;
+} */
+
+@media (max-width: 1400px) {
+    .colonneGauche {
+        background: linear-gradient(to bottom, rgb(223, 222, 220) 85%, #008080 15%);
+        color: rgb(30, 51, 51);
+        font-weight: 600;
+        width: 18em;
+        font-size: 80%;
+    }
+    .colonneDroite {
+        font-size: 80%;
+    }
+    h1{
+        font-size: 4em;
+    }
+    h2, h3, h4, h5, h6 {
+        color: azure;
+        font-size: 1.3em;
+    }
+    
+    .img::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left:9em  solid transparent;
+        border-right: 9em solid transparent;
+        border-top: 3.9em solid #03989e;
+    }
+    .diplomes::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left:9em  solid transparent;
+        border-right: 9em solid transparent;
+        border-top: 3.9em solid cornflowerblue;
+    }
+
+    img{
+        margin-top: 4em;
+            width: 80%; 
+            height: auto; 
+            filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
+        }
+}
+.meContacter > p {
+    font-size: 1em;
+}
+
+
+
+@media (max-width: 770px) {
+    .colonneDroite {
+        width: 50%; 
+        font-size: 70%;
+    }
+    h1{
+        font-size: 3em;
+    }
+    h2, h3, h4, h5, h6 {
+        color: azure;
+        font-size: 1em;
+    }
+    
+
+}
