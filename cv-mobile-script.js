@@ -1,14 +1,20 @@
 // Initialisation
 const divPros = document.querySelectorAll(".pro");
 
-// Fonction pour afficher le ul
+// Fonction pour afficher le ul et tourner l'icône
 function showUl(divPro) {
-    divPro.querySelector("ul").style.display = "block";
+    const ul = divPro.querySelector("ul");
+    const icon = divPro.querySelector("h4 > i");
+    ul.style.display = "block";
+    icon.classList.add("rotated"); 
 }
 
-// Fonction pour cacher le ul
+// Fonction pour cacher le ul et réinitialiser l'icône
 function hideUl(divPro) {
-    divPro.querySelector("ul").style.display = "none";
+    const ul = divPro.querySelector("ul");
+    const icon = divPro.querySelector("h4 > i");
+    ul.style.display = "none";
+    icon.classList.remove("rotated");
 }
 
 // Attachement des événements
@@ -22,6 +28,10 @@ divPros.forEach(divPro => {
         }
     });
 });
+
+
+
+
 
 //!CONTACT
 const contactDiv = document.querySelector('.contact');

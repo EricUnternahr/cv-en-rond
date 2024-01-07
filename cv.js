@@ -1,17 +1,55 @@
+// Initialisation
+const divPros = document.querySelectorAll(".pro");
 
-//!CONTACT
+// Fonction pour afficher le ul
+function showUl(divPro) {
+    divPro.querySelector("ul").style.display = "block";
+}
 
-    const contactDiv = document.querySelector('.contact');
-    const centre = document.querySelector('.centre');
-    let isTransformed = false;
-    let addedElements = [];
+// Fonction pour cacher le ul
+function hideUl(divPro) {
+    divPro.querySelector("ul").style.display = "none";
+}
 
-    contactDiv.addEventListener('click', function() {
-        if (!isTransformed) {
-            transformContactDiv();
-            isTransformed = true;
+// Attachement des événements
+divPros.forEach(divPro => {
+    divPro.addEventListener("click", () => {
+        const ul = divPro.querySelector("ul");
+        if (ul.style.display === "block") {
+            hideUl(divPro);
+        } else {
+            showUl(divPro);
         }
     });
+});
+//!CONTACT
+
+const contactDiv = document.querySelector('.contact');
+const nom = document.querySelector('.nom');
+const trait = document.querySelector('.trait');
+const skill = document.querySelector('.skill');
+const experiencesPro = document.querySelector('.experiencesPro');
+let isTransformed = false;
+let addedElements = [];
+
+contactDiv.addEventListener('click', function() {
+    if (!isTransformed) {
+        transformContactDiv();
+        isTransformed = true;
+        divPros.forEach(div => {
+            div.style.transform = 'scale(0.5)';
+            div.style.opacity = '0';
+        });
+        nom.style.transform = 'scale(0.5)';
+        nom.style.opacity = '0';
+        experiencesPro.style.transform = 'scale(0.5)';
+        experiencesPro.style.opacity = '0';
+        trait.style.transform = 'scale(0.5)';
+        trait.style.opacity = '0';
+        skill.style.transform = 'scale(0.5)';
+        skill.style.opacity = '0';
+    }
+});
 
     // ! ajustement de la taille de la DIV CONTACT
 
@@ -26,10 +64,10 @@
         console.log("mode portrait")
     } else {
         // Mode paysage
-        contactDiv.style.height = '20vh';
-        contactDiv.style.width = '25vh';
-        contactDiv.style.fontSize = '1.5vh'; 
-        contactDiv.style.lineHeight = '2vh';
+        contactDiv.style.height = '75vh';
+        contactDiv.style.width = '85vh';
+        contactDiv.style.fontSize = '5vh'; 
+        contactDiv.style.lineHeight = '7vh';
         
         
         console.log("mode paysage")
@@ -108,7 +146,7 @@
         closeButton.style.position = 'absolute';
         closeButton.style.top = '1vh';
         closeButton.style.right = '1vw';
-        closeButton.style.fontSize = '1vh';
+        closeButton.style.fontSize = '4vh';
         closeButton.style.color = 'white';
 
         closeButton.addEventListener('click', function(event) {
@@ -147,7 +185,22 @@
             contactDiv.style.fontSize = '2vh';
             contactDiv.style.padding ='0'
 
-
+            setTimeout(() => {
+                divPros.forEach(div => {
+                    div.style.transform = 'scale(1)';
+                    div.style.opacity = '1';
+                });
+    
+                nom.style.transform = 'scale(1)';
+                nom.style.opacity = '1';
+                experiencesPro.style.transform = 'scale(1)';
+                experiencesPro.style.opacity = '1';
+                trait.style.transform = 'scale(1)';
+                trait.style.opacity = '1';
+                skill.style.transform = 'scale(1)';
+        skill.style.opacity = '1';
+            }, 1000);
+        
         }, 120 * addedElements.length + 300); // Ajouter un délai supplémentaire pour la dernière animation
     }
 

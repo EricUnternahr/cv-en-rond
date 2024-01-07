@@ -1,7 +1,6 @@
 :root {
     --animation-duration: 100s; /* Durée de l'animation pour tous les panels */
 }
-
 html, body {
     position: absolute;
     height: 100%;
@@ -13,31 +12,6 @@ html, body {
     margin: 0;
     padding: 0;
     caret-color: transparent;
-}
-
-/*! FOOTER*/
-footer {
-    position:fixed;
-    background-color: #1f2327;
-    color: #f8f9fa;
-    text-align: center;
-    padding-top: 0px;
-    padding-bottom: 10px;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a {
-    color: #f8f9fa;            
-    text-decoration:underline; 
-    transition: transform 0.3s ease;   
-    display: inline-block; 
-    font-weight: 800;
-    font-size: 20px;
-}
-
-footer a:hover {
-    transform: scale(1.1);     
 }
 
 /*!CONTACT*/
@@ -56,22 +30,20 @@ footer a:hover {
     font-size: 2.2vh;
     font-weight: 800;
 }
-/*ANIAMTION CONTCT ROND ET CARRE*/
+
+/*!ANIAMTION CONTCT ROND ET CARRE*/
 .contact, .centre {
     transition: all 1s ease-in-out;
 }
-
 .contact p {
     transition: transform 01s ease, opacity 01s ease;
 }
-
 .contact a {
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
 }
 
 /*!DIV PRINCIPALE*/
-
 #manege {
     position: relative;
     height: 90vh;
@@ -80,8 +52,7 @@ footer a:hover {
     align-items: center;
     transition: transform 2s ease;
 }
-
-/*DEGRADE ET ANIMATION DEGRADE*/
+/*!DEGRADE ET ANIMATION DEGRADE*/
 @keyframes rotate {
     0% {
     transform: rotate(0deg);
@@ -90,7 +61,6 @@ footer a:hover {
     transform: rotate(360deg);
     }
 }
-
 .gradient {
     width: 500px;
     height: 500px;
@@ -100,7 +70,7 @@ footer a:hover {
     border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
 }
 
-/*BOITE CENTRALE AVEC PHOTO*/
+/*!BOITE CENTRALE AVEC PHOTO*/
 .circleText {
     position: absolute;
     text-align: center;
@@ -110,8 +80,6 @@ footer a:hover {
     font-size: auto;
     color: rgb(240, 248, 255);
 }
-
-
 .bigBox {
     position: absolute;
     top: 50%;
@@ -123,7 +91,6 @@ footer a:hover {
     margin: 15px;
     z-index: 1;
 }
-
 .box {
     position: relative;
     border-radius: 50%;
@@ -132,7 +99,6 @@ footer a:hover {
     transform-style: preserve-3d;
     transition: .5s ease;
 }
-
 .boxFront, .boxBack {
     position: absolute;
     top: 0;
@@ -154,17 +120,15 @@ footer a:hover {
 .boxBack {
     transform: rotateY(180deg);
 }
-
 .bigBox:hover .box {
     transform: rotateY(180deg); 
 }
-
 img {
     height: 100%;
 }
+
+
 /*!BOITES EXTERIEURS AVEC ANIMATION*/
-
-
 .rotating-container {
     position: absolute;
     top: 50%;
@@ -174,7 +138,6 @@ img {
     transform: translate(-80%, -70%); /* Centre le container */
     transform-style: preserve-3d;
 }
-
 
 .panel:nth-child(1) { 
     animation-name: rotatePanel1;
@@ -232,7 +195,7 @@ img {
     100% { transform: rotate(668.5deg) translate(0, -500px) rotate(-668.5deg); }
 }
 
-/*BOITES INTERIEURES*/
+/*!BOITES INTERIEURES*/
 .panel {
     position: absolute;
     width: 300px; 
@@ -259,7 +222,6 @@ img {
 .intro img{
     max-height: 300px;    
 }
-
 .surIntro{
     position: absolute;
     top:0%;
@@ -292,7 +254,6 @@ img {
     height: 300px; 
     pointer-events: auto;
     }
-
 .panel:hover .intro p{
     opacity: 1;    
 }
@@ -309,9 +270,7 @@ img {
     opacity: 1; 
 }
 
-
-/*PLACEMENT DES P AUTOUR DU SKILL*/
-
+/*!PLACEMENT DES P AUTOUR DU SKILL*/
 .pAdaptabilite{ position: relative;
     top:-85%; 
     left: 65%;}
@@ -343,9 +302,30 @@ img {
     left: 65%;}
 
 
+.stop-animation {
+    animation-play-state: paused;
+}
 
-    .stop-animation {
-        animation-play-state: paused;
-    }
-
-
+/*! FOOTER*/
+footer {
+    position:fixed;
+    background-color: #1f2327;
+    color: #f8f9fa;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    bottom: 0;
+    width: 100%;
+    transition: opacity 1s ease-in-out; 
+}
+footer a {
+    color: #f8f9fa;            
+    text-decoration:underline; 
+    transition: transform 0.3s ease;   
+    display: inline-block; 
+    font-weight: 800;
+    font-size: 20px;
+}
+footer a:hover {
+    transform: scale(1.1);     
+}

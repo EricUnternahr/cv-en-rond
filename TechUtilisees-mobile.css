@@ -1,0 +1,148 @@
+/*!PAGE ET FOND DEGRADE*/
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    caret-color: transparent;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 7vw;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    padding: 0.2em; 
+    background-color: rgba(99, 96, 96, 0.141);}
+section {
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+}
+section h2 {
+    color: #c3c1c1;
+    margin-bottom: 10px;
+}
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+ul li {
+    margin-bottom: 5px;
+}
+
+
+/*!IMAGE HOMME ET DEGRADE TOURNANT*/
+.containerHomme {
+    display: flex;
+    justify-content: center; 
+    height: 50vh; 
+}
+.rowHomme {
+    position: relative; 
+}
+.Homme{
+    height: 50vh;
+    width: auto;
+    
+}
+.gradient {
+    position: absolute;
+    width: 50vh;
+    height: 50vh;
+    filter: blur(50px);
+    background-image: linear-gradient(#4bc6c3, #cae6b8, #df8629);
+    animation: rotate 10s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
+    border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+    z-index: -1;
+}
+@keyframes rotate {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+/*!BOUTONS SC ET SOFT SKILLS*/
+.cv {
+    height: 12vw;
+    width: 12vw;
+    position: absolute;
+    top: 17vh;
+    right:1vw;
+    border-radius: 50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index: 1;
+}
+.cv img{
+    height: 12vw;
+}
+
+.softSkill {
+    height: 12vw;
+    width: 12vw;
+    position: absolute;
+    top: 10vh;
+    right:1vw;
+    border-radius: 50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index: 1;
+}
+.softSkill img{
+    height: 12vw;
+}
+
+/*!LOGOS TECHNOS*/
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.skill-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-top: 2em ;
+}
+.skill-item p {
+    margin-bottom: 5px; 
+    text-align: center; 
+    font-size: 2em;
+}
+.icon {
+    width: 150px; 
+    height: auto; 
+    
+}
+

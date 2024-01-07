@@ -1,3 +1,4 @@
+/*! ELEMENTS */
 body {
     background-image: radial-gradient(circle, #046c69, #013836, #012726, #000909);
     background-attachment: fixed;
@@ -5,23 +6,23 @@ body {
     font-family: 'Montserrat', sans-serif;
     min-width: 100vw;
 }
+.col-8 {
+    flex: 0 0 95%;
+    max-width: 95%;
+}
+.trait{
+    display:none;
+}
+.colonneGauche {
+    display: none;
+}
 
-
+/*!MISE EN FORME*/
 span{
     display: inline-block;
     font-weight: 800;
     color: rgb(235, 235, 246);
 }
-
-.col-8 {
-    flex: 0 0 95%;
-    max-width: 95%;
-}
-
-.trait{
-    display:none;
-}
-
 h1 {
     font-style: italic;
     font-size: 10vw; 
@@ -31,7 +32,6 @@ h1 {
     filter: drop-shadow(3px 3px 4px rgba(24, 24, 24, 0.7));
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
-
 h2 {
     text-align: center;
     font-size: 6vw;
@@ -51,21 +51,18 @@ p {
 ul {
     font-size: 3.4vw;
 }
-.colonneGauche {
-    display: none;
-}
 
+/*!INTITULES PRO ET PARAGRAPHES*/
 div.pro, .nom, .experiencesPro {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
-
 .pro ul {
 display: none;
 animation: show 1s ease-in-out;
-
 }
-
+.pro{
+    padding-left:1em;
+}
 @keyframes show {
 0% {
     opacity: 0;
@@ -74,9 +71,20 @@ animation: show 1s ease-in-out;
     opacity: 1;
 }
 }
+.pro h4 {
+    cursor: pointer; 
+    position: relative;
+}
 
-.pro{
-    padding-left:1em;
+.pro h4 i {
+    margin-right: 10px;
+    color: cadetblue; 
+    transition: transform 0.2s ease;
+}
+
+.pro h4 i.rotated {
+    transform: rotate(180deg);
+    transition: transform 0.8s ease;
 }
 
 
@@ -100,12 +108,28 @@ animation: show 1s ease-in-out;
 .contact, .centre {
     transition: all 1s ease-in-out;
 }
-
 .contact p {
     transition: transform 01s ease, opacity 01s ease;
 }
-
 .contact a {
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
 }
+
+/*! SKILLS*/
+.skill {
+    height: 7vh;
+    width: 7vh;
+    position: fixed;
+    top: 1.5vh;
+    left:2.5vw;
+    border-radius: 50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index: 1;
+}
+.skill img{
+    height: 7vh;
+}
+

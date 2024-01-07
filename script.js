@@ -48,14 +48,16 @@ window.onload = adjustScaleByAspectRatioAndOrientation;
         isAnimating = true;
         isClicked = true;
         const contactDiv = document.querySelector('.contact');
+        const footer = document.querySelector('footer');
         contactDiv.style.opacity ='0'
+        footer.style.opacity ='0'
         const panelRect = panel.getBoundingClientRect();
         const manegeRect = manege.getBoundingClientRect();
         
         const offsetX = (panelRect.left + panelRect.right-150)  - (manegeRect.left + manegeRect.right-150) ;
         const offsetY = (panelRect.top + panelRect.bottom-150)  - (manegeRect.top + manegeRect.bottom-150) ;
 
-        manege.style.transform = `translate(${-offsetX}px, ${-offsetY}px) scale(1.4)`;
+        manege.style.transform = `translate(${-offsetX}px, ${-offsetY}px) scale(1.3)`;
 
         setTimeout(() => {
             isAnimating = false;
@@ -76,6 +78,7 @@ window.onload = adjustScaleByAspectRatioAndOrientation;
 //! Attacher les événements de survol aux panels
 panels.forEach(function(panel) {
     const contactDiv = document.querySelector('.contact');
+    const footer = document.querySelector('footer');
     
     if (!panel.classList.contains('cv-panel')) {
     panel.addEventListener('mouseenter', function() {
@@ -87,6 +90,7 @@ panels.forEach(function(panel) {
         startAllAnimations();
         adjustScaleByAspectRatioAndOrientation();
         contactDiv.style.opacity = '1';
+        footer.style.opacity='1'
         isClicked = false;
     });
 }else{

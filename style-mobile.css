@@ -12,7 +12,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Utilisez min-height pour garantir que le contenu prend au moins toute la hauteur de la fenêtre */
+    min-height: 100vh; 
     padding-bottom: 90px;
 }
 .centre {
@@ -145,7 +145,7 @@ img {
     position: relative;
 }
 
-/*PLACEMENT DES P AUTOUR DU SKILL*/
+/*!PLACEMENT DES P AUTOUR DU SKILL*/
 
 .pAdaptabilite { position: relative;
     top:-92%; 
@@ -172,7 +172,7 @@ img {
     top:-92%; 
     left: 65%;}
 
-    /*!CONTACT*/
+/*!CONTACT*/
 .contact {
     height: 6vh;
     width: 6vh;
@@ -188,7 +188,8 @@ img {
     font-size: 1.2vh;
     font-weight: 800;
 }
-/*ANIAMTION CONTCT ROND ET CARRE*/
+
+/*ANIAMTION CONTACT ROND ET CARRE*/
 .contact, .centre {
     transition: all 1s ease-in-out;
 }
