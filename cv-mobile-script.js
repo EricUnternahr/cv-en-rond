@@ -1,4 +1,4 @@
-// Initialisation
+//!AFFICHAGE DES UL
 const divPros = document.querySelectorAll(".pro");
 
 // Fonction pour afficher le ul et tourner l'icône
@@ -29,10 +29,6 @@ divPros.forEach(divPro => {
     });
 });
 
-
-
-
-
 //!CONTACT
 const contactDiv = document.querySelector('.contact');
 const nom = document.querySelector('.nom');
@@ -52,13 +48,10 @@ contactDiv.addEventListener('click', function() {
         nom.style.opacity = '0';
         experiencesPro.style.transform = 'scale(0.5)';
         experiencesPro.style.opacity = '0';
-
     }
 });
 
 // ! DIV CONTACT CARREE
-
-
 function adjustDivProperties() {
     contactDiv.style.height = 'auto';
     contactDiv.style.width = '80vw';
@@ -69,8 +62,6 @@ function adjustDivProperties() {
     contactDiv.style.padding ='2vh'
     contactDiv.style.top = '25vh'
     contactDiv.style.right = '10vw'
-    console.log("mode portrait")
-
 }
 window.addEventListener('resize', function() {
     if (isTransformed) {
@@ -88,7 +79,6 @@ function transformContactDiv() {
     
     adjustDivProperties();
     
-
     // Ajouter la croix de fermeture et les liens
     const closeButton = createCloseButton();
     contactDiv.appendChild(closeButton);
@@ -166,8 +156,6 @@ function resetContactDiv() {
         addedElements.forEach(elem => elem.remove());
         addedElements = [];
 
-        
-
         // Réinitialiser les styles de contactDiv
         contactDiv.style.borderRadius = '50%';
         contactDiv.style.display = 'flex';
@@ -180,7 +168,6 @@ function resetContactDiv() {
         contactDiv.style.top = '1.5vh'
         contactDiv.style.right = '2.5vw'
         contactDiv.style.border = '0.3vh rgb(19, 247, 3) solid'
-
 
         setTimeout(() => {
             divPros.forEach(div => {

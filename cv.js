@@ -1,27 +1,3 @@
-// Initialisation
-const divPros = document.querySelectorAll(".pro");
-
-// Fonction pour afficher le ul
-function showUl(divPro) {
-    divPro.querySelector("ul").style.display = "block";
-}
-
-// Fonction pour cacher le ul
-function hideUl(divPro) {
-    divPro.querySelector("ul").style.display = "none";
-}
-
-// Attachement des événements
-divPros.forEach(divPro => {
-    divPro.addEventListener("click", () => {
-        const ul = divPro.querySelector("ul");
-        if (ul.style.display === "block") {
-            hideUl(divPro);
-        } else {
-            showUl(divPro);
-        }
-    });
-});
 //!CONTACT
 
 const contactDiv = document.querySelector('.contact');
@@ -61,16 +37,12 @@ contactDiv.addEventListener('click', function() {
         contactDiv.style.width = '16vw';
         contactDiv.style.fontSize = '1vw'; 
         contactDiv.style.lineHeight = '1.5vh';
-        console.log("mode portrait")
     } else {
         // Mode paysage
         contactDiv.style.height = '75vh';
         contactDiv.style.width = '85vh';
         contactDiv.style.fontSize = '5vh'; 
         contactDiv.style.lineHeight = '7vh';
-        
-        
-        console.log("mode paysage")
     }
 }
     window.addEventListener('resize', function() {
@@ -89,13 +61,11 @@ contactDiv.addEventListener('click', function() {
         contactDiv.style.color = 'white';
         contactDiv.style.padding ='3vh'
         
-        
         contactDiv.style.border ='0.5vh rgb(19, 247, 3) solid'
         contactDiv.style.borderRadius='2vh'
         
         adjustDivProperties();
         
-
         // Ajouter la croix de fermeture et les liens
         const closeButton = createCloseButton();
         contactDiv.appendChild(closeButton);
@@ -163,8 +133,8 @@ contactDiv.addEventListener('click', function() {
             setTimeout(() => {
                 addedElements[i].style.opacity = '0';
                 addedElements[i].style.transform = 'scale(0)';
-                addedElements[i].style.height = '0'; // Ajouter une animation de hauteur
-                addedElements[i].style.margin = '0'; // Éliminer les marges pendant la transition
+                addedElements[i].style.height = '0'; 
+                addedElements[i].style.margin = '0'; 
             }, 220 * i);
         }
 
@@ -172,8 +142,6 @@ contactDiv.addEventListener('click', function() {
         setTimeout(() => {
             addedElements.forEach(elem => elem.remove());
             addedElements = [];
-
-            
 
             // Réinitialiser les styles de contactDiv
             contactDiv.style.borderRadius = '50%';

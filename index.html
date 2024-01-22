@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cv de Eric UNTERNAHR</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    
+    <link rel="stylesheet" href="commun.css">
     <script src="script-commun.js"></script>
-    
-    
-    
 </head>
+
 <body>
-    <section>
-        
-        <div id="manege">
-            
+    <!--!Ecran de chargement-->
+    <div id="loadingScreen" >
+        <p>BIENVENUE</p>
+    </div>
+    <section>        
+        <div id="manege">            
             <div class="centre">
+                
                 <!-- ! DEGRADE CENTRAL -->
                 <div class="gradient"></div>
 
@@ -128,21 +130,25 @@
                 </div>
             </div>
         </div> 
-            <!--! CONTACT -->
-            <div class="contact">
-                <p>Contact</p>
-            </div>
-
-        
+        <!-- !COOKIE -->
+    <div id="cookieConsentContainer" class="cookie-consent-container">
+        <p>This website uses cookies to ensure you get the best experience on our website.</p>
+        <button id="acceptCookieConsent" onclick="acceptCookieConsent();">Accept</button>
+        <button id="declineCookieConsent" onclick="hideCookieBanner();">Decline</button>
+    </div>
+        <!--! CONTACT -->
+        <div class="contact">
+            <p>Contact</p>
+        </div>
     </section>
-
+    
+    
     <footer >
-        <div >
+        
             <p>&copy; 2023 Eric UNTERNAHR. Tous droits réservés.</p>
             <a href="TechUtilisees.html" >Technologies Utilisées</a>
-        </div>
+        
     </footer>  
-    
-    
+
 </body>
 </html>

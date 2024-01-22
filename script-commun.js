@@ -1,4 +1,6 @@
 (function() {
+    let ecranChargementDejaMasque = false;
+
     function chargementStyle(url) {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
@@ -6,45 +8,64 @@
         document.head.appendChild(link);
     }
 
-    function chargementScript(url) {
+    function chargementScript(url, callback) {
         const script = document.createElement('script');
         script.src = url;
         script.async = true;
-        document.head.appendChild(script); 
+        script.onload = callback;
+        document.head.appendChild(script);
     }
 
-    // Déterminer la page actuelle
+    function masquerEcranChargement() {
+        if (!ecranChargementDejaMasque) {
+            let loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.style.display = 'none';
+                ecranChargementDejaMasque = true;
+            }
+        }
+    }
+
+    
+    let delaiMax = 5000; // 5000 millisecondes = 5 secondes
+    setTimeout(masquerEcranChargement, delaiMax);
+
+
+
+    function estMobile() {
+        return /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || window.innerHeight > window.innerWidth;
+    }
+
     let page = window.location.pathname.split("/").pop();
 
-    // Charger les fichiers pour index.html
     if (page === 'index.html' || page === '') {
-        if (/Mobi|Android/i.test(navigator.userAgent)) {
+        if (estMobile()) {
             chargementStyle('style-mobile.css');
-            chargementScript('script-mobile.js');
+            chargementScript('script-mobile.js', masquerEcranChargement);
         } else {
             chargementStyle('style.css');
-            chargementScript('script.js');
+            chargementScript('script.js', masquerEcranChargement);
         }
     }
 
-    // Charger les fichiers pour cv.html
     if (page === 'cv.html') {
-        if (/Mobi|Android/i.test(navigator.userAgent)) {
+        if (estMobile()) {
             chargementStyle('cv-mobile-style.css');
-            chargementScript('cv-mobile-script.js');
+            chargementScript('cv-mobile-script.js', masquerEcranChargement);
         } else {
             chargementStyle('cv.css');
-            chargementScript('cv.js');
+            chargementScript('cv.js', masquerEcranChargement);
         }
     }
 
-    // Charger les fichiers pour mentions-legales.html
     if (page === 'TechUtilisees.html') {
-        if (/Mobi|Android/i.test(navigator.userAgent)) {
+        if (estMobile()) {
             chargementStyle('TechUtilisees-mobile.css');
         } else {
             chargementStyle('TechUtilisees.css');
-            
         }
+        
+        masquerEcranChargement();
     }
 })();
+

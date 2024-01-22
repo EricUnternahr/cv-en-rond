@@ -1,47 +1,53 @@
 // Interaction pour .bigBox
 document.querySelector('.bigBox').addEventListener('click', function() {
     this.querySelector('.box').classList.toggle('is-flipped');
-    console.log("ça clique");
+
 });
+
+//!ANIMATION AU CLIC SUR LES PANELS
+
+let isPanelActive = false;
 
 document.querySelectorAll('.panel').forEach(function(panel) {
     panel.addEventListener('click', function() {
-        // Récupérer tous les panels
-        const allPanels = document.querySelectorAll('.panel');
-        const contactDiv = document.querySelector('.contact'); // Assurez-vous que c'est le bon sélecteur pour votre contactDiv
+        
+        if (isPanelActive && !this.classList.contains('active')) {
+            return;
+        }
 
-        // Trouver les éléments .intro et .card à l'intérieur du .panel cliqué
+        const allPanels = document.querySelectorAll('.panel');
+        const contactDiv = document.querySelector('.contact'); 
         const intro = this.querySelector('.intro');
         const introParagraphs = this.querySelectorAll('.intro p');
         const card = this.querySelector('.card');
-
-        // Vérifier si l'intro de ce panel est déjà visible
         const isIntroVisible = intro.style.opacity === "1";
 
-        // Bascule l'opacité de tous les autres panels
         allPanels.forEach(p => {
             if (p !== this) {
                 p.style.opacity = isIntroVisible ? "1" : "0";
+                p.classList.remove('active'); 
             }
         });
 
-        // Bascule l'opacité de .intro, .card, et tous les <p> dans .intro
         intro.style.opacity = isIntroVisible ? "0" : "1";
         card.style.opacity = isIntroVisible ? "1" : "0";
-
         introParagraphs.forEach(p => {
             p.style.opacity = isIntroVisible ? "0" : "1";
         });
 
-        // Gérer l'opacité de la contactDiv
         if (!isIntroVisible) {
             contactDiv.style.opacity = "0";
+            
+            isPanelActive = true; 
+            this.classList.add('active'); 
         } else {
             contactDiv.style.opacity = "1";
+            
+            isPanelActive = false; 
+            this.classList.remove('active'); 
         }
     });
 });
-
 
 //!CONTACT
 
@@ -51,7 +57,7 @@ document.querySelectorAll('.panel').forEach(function(panel) {
     let addedElements = [];
 
     contactDiv.addEventListener('click', function() {
-        if (!isTransformed) {
+        if (!isPanelActive & !isTransformed) {
             transformContactDiv();
             isTransformed = true;
             centre.style.transform = 'scale(0.5)';
@@ -65,7 +71,6 @@ document.querySelectorAll('.panel').forEach(function(panel) {
     function adjustDivProperties() {
         contactDiv.style.height = 'auto';
         contactDiv.style.width = '80vw';
-        // contactDiv.style.transform = 'translate(-55%, -50%)'
         contactDiv.style.fontSize = '5vw'; 
         contactDiv.style.lineHeight = '8vw';
         contactDiv.style.border ='1vw rgb(19, 247, 3) solid'
@@ -73,7 +78,7 @@ document.querySelectorAll('.panel').forEach(function(panel) {
         contactDiv.style.padding ='2vh'
         contactDiv.style.top = '15%'
         contactDiv.style.left = '-1%'
-        console.log("mode portrait")
+
     
 }
     window.addEventListener('resize', function() {
@@ -92,7 +97,6 @@ document.querySelectorAll('.panel').forEach(function(panel) {
         
         adjustDivProperties();
         
-
         // Ajouter la croix de fermeture et les liens
         const closeButton = createCloseButton();
         contactDiv.appendChild(closeButton);
@@ -168,9 +172,7 @@ document.querySelectorAll('.panel').forEach(function(panel) {
         // Supprimer les éléments et réinitialiser les styles après que l'animation soit terminée
         setTimeout(() => {
             addedElements.forEach(elem => elem.remove());
-            addedElements = [];
-
-            
+            addedElements = [];            
 
             // Réinitialiser les styles de contactDiv
             contactDiv.style.borderRadius = '50%';
@@ -187,7 +189,42 @@ document.querySelectorAll('.panel').forEach(function(panel) {
 
             centre.style.transform = 'scale(1)';
             centre.style.opacity = '1';
-        }, 120 * addedElements.length + 300); // Ajouter un délai supplémentaire pour la dernière animation
+        }, 120 * addedElements.length + 300); 
     }
 
+// !COOKIE
+
+if (!getCookie("cookieConsent")) {
+    document.getElementById("cookieConsentContainer").style.display = "block";
+}
+
+function acceptCookieConsent() {
+    setCookie("cookieConsent", "1", 365);
+    document.getElementById("cookieConsentContainer").style.display = "none";
+}
+
+function hideCookieBanner() {
+    document.getElementById("cookieConsentContainer").style.display = "none";
+}
+
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
 
