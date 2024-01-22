@@ -1,4 +1,5 @@
-// Interaction pour .bigBox
+
+// !Interaction pour .bigBox
 document.querySelector('.bigBox').addEventListener('click', function() {
     this.querySelector('.box').classList.toggle('is-flipped');
 

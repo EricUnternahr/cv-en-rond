@@ -1,3 +1,4 @@
+
 //!CONTACT
 
 const contactDiv = document.querySelector('.contact');

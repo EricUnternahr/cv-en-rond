@@ -25,12 +25,11 @@
             }
         }
     }
-
     
     let delaiMax = 5000; // 5000 millisecondes = 5 secondes
     setTimeout(masquerEcranChargement, delaiMax);
 
-
+    
 
     function estMobile() {
         return /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || window.innerHeight > window.innerWidth;

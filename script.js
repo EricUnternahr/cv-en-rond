@@ -1,3 +1,4 @@
+
 // !COOKIE
 if (!getCookie("cookieConsent")) {
     document.getElementById("cookieConsentContainer").style.display = "block";
